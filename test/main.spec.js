@@ -2,8 +2,8 @@ const playwright = require("playwright-core");
 
 (async function () {
     // const browserType = "chromium"
-    const browserType = "firefox"
-    // const browserType = "webkit"
+    // const browserType = "firefox"
+    const browserType = "webkit"
 
     // await playwright[browserType].downloadBrowserIfNeeded()
     const browser = await playwright[browserType].launch({
@@ -14,6 +14,10 @@ const playwright = require("playwright-core");
     const page = await context.newPage();
     console.log("before goto")
     await page.goto('http://localhost:8000');
+
+    const nextinput = await page.$("input[type='number']")
+    await nextinput.type("123123123")
+
     console.log("before button")
     await page.click("button")
     console.log("after button")
