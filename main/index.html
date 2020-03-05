@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        MAIN
+        <button>Toggle cross domain iframe</button>
+    </main>
+    <div>
+        <iframe src="#" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        const button = document.querySelector("button")
+        const iframe = document.querySelector("iframe")
+
+        button.addEventListener("click", (e) => {
+            iframe.setAttribute("src", "http://localhost:9000")
+        })
+    </script>
+</body>
+</html>
