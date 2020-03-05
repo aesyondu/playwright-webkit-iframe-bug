@@ -31,8 +31,11 @@ const playwright = require("playwright-core");
         fullPage: true,
     })
 
-    await childFrame.waitForSelector("input[type='number']")
-    const myinput = await childFrame.$("input[type='number']")
+    // await childFrame.waitForSelector("input[type='number']")
+    // const myinput = await childFrame.$("input[type='number']")
+
+    await childFrame.waitForSelector("input")
+    const myinput = await childFrame.$("input")
     await myinput.type("123123123")
 
     await page.screenshot({
